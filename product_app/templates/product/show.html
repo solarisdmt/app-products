@@ -1,0 +1,10 @@
+<h3>{{product['name']}}</h3>
+<p>{{product['category']}}</p>
+<p>Precio: {{ product['price'] | default('Sin precio', True)}}</p>
+<p>Precio + IGV: {{ product | igv }}</p>
+
+{% if product['price'] >= 1000 %}
+    <p>Precio regular</p>
+{% else %}
+    <p>Precio oferta!</p>
+{% endif %}
